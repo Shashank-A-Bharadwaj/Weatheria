@@ -2,6 +2,7 @@ import sys
 import requests
 import PyQt5.QtWidgets as qw
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QIcon
 
 class WeatherApp(qw.QWidget):
     def __init__(self):
@@ -16,7 +17,7 @@ class WeatherApp(qw.QWidget):
 
     def initUI(self):
         self.setWindowTitle("Weather App")
-
+        self.setWindowIcon(QIcon("weather.png))
         vbox = qw.QVBoxLayout()
         vbox.addWidget(self.city_label)
         vbox.addWidget(self.city_input)
@@ -161,4 +162,5 @@ if __name__ == "__main__":
     app = qw.QApplication(sys.argv)
     w = WeatherApp()
     w.show()
+
     sys.exit(app.exec_())
